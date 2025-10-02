@@ -1,0 +1,48 @@
+<svg width="600" height="300">
+  <!-- AWSノード -->
+  <image href="ec2.svg" x="50" y="100" width="60" height="60"/>
+  <image href="lambda.svg" x="250" y="100" width="60" height="60"/>
+  <image href="dynamodb.svg" x="450" y="100" width="60" height="60"/>
+
+  <!-- 矢印の定義 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- フロー線 -->
+  <path id="flow1" d="M110,130 C160,50 220,200 250,130"
+        stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path id="flow2" d="M310,130 C360,50 420,200 450,130"
+        stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 流れるデータ点 -->
+  <circle id="packet" r="6" fill="red"/>
+</svg>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+  const paths = [d3.select("#flow1").node(), d3.select("#flow2").node()];
+  const packet = d3.select("#packet");
+
+  function animatePath(pathIndex) {
+    const path = paths[pathIndex];
+    const length = path.getTotalLength();
+
+    packet
+      .transition()
+      .duration(2000)
+      .attrTween("transform", () => t => {
+        const p = path.getPointAtLength(t * length);
+        return `translate(${p.x},${p.y})`;
+      })
+      .on("end", () => {
+        // 次の矢印に移動 or 最初に戻る
+        const nextIndex = (pathIndex + 1) % paths.length;
+        animatePath(nextIndex);
+      });
+  }
+
+  animatePath(0);
+</script>
