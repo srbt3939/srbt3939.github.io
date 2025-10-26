@@ -1,0 +1,17 @@
+[
+  {
+    "name": "aws",
+    "title": "aws test",
+    "path": "/memos/aws.md"
+  },
+  {
+    "name": "python-tips",
+    "title": "Python Tips",
+    "path": "/memos/python-tips.md"
+  },
+  {
+    "name": "react",
+    "title": "react",
+    "path": "/memos/react.md"
+  }
+]
