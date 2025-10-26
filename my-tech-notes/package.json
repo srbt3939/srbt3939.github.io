@@ -5,10 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-index.mjs && vite build",
-    "preview": "vite preview"
+    "build": "node scripts/generate-index.mjs && vite build && react-scripts build", 
+    "preview": "vite preview",
+    "start": "react-scripts start", 
+    "test":"react-scripts test", 
+    "eject": "react-scripts eject", 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
@@ -27,5 +33,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.16",
     "vite": "^7.1.7"
-  }
+  },
+  "homepage": "http://srbt3939.github.io"
 }
