@@ -1,13 +1,22 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-tech-memo</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>k's Tech Memo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>技術メモ</h1>
+  <ul id="memo-list"></ul>
+
+  <script>
+    const memos = ["aws.md", "react.md", "python.md"];
+    const list = document.getElementById("memo-list");
+    memos.forEach(file => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="memos/${file}">${file.replace(".md", "")}</a>`;
+      list.appendChild(li);
+    });
+  </script>
+</body>
 </html>
