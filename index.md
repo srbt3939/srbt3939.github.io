@@ -5,6 +5,7 @@ title: トップページ
 
 # 技術メモ一覧
 
-- [AWS メモ](./notes/aws.md)
+- [AWS INBOX](./notes/aws.md)
+    - [Using SQS with Lambda](./notes/UsingSQSWithLambda.md)
 - [Python メモ](./notes/python.md)
 - [About ページ](./about.md)
