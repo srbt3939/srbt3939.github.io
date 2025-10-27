@@ -1,4 +1,4 @@
 title: My Memo Site
 description: 技術メモ集
-theme: none  # デフォルトテーマを使わない
+theme: jekyll-theme-modernist  # デフォルトテーマを使わない
 markdown: kramdown
