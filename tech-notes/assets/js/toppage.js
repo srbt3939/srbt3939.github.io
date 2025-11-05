@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded", function(){
         .attr("cx", 150)
         .attr("cy", 100)
         .attr("r", 50)
-        .attr("fill", "steelblue")           
+        .attr("fill", "steelblue");   
 });
