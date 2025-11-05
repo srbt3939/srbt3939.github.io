@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     const svg = d3.select("#chart")
         .append("svg")
         .attr("width", 300)
