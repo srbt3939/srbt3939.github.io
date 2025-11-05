@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function drawChart() {
     const svg = d3.select("#chart")
         .append("svg")
         .attr("width", 300)
@@ -8,5 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("cx", 150)
         .attr("cy", 100)
         .attr("r", 50)
-        .attr("fill", "steelblue");   
-});
+        .attr("fill", "steelblue");
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", drawChart);
+} else {
+    // DOMContentLoaded already fired
+    drawChart();
+}
